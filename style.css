@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: beige;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  background: #360033;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#contain-time {
+  width: 60%;
+  height: 25rem;
+  margin: 0 auto;
+  /* border: 2px solid darkblue; */
+  display: flex;
+  flex-wrap: wrap;
+  padding: .5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#contain-time > div {
+  width: 33%;
+  height: auto;
+  font-size: 7rem;
+  /* background-color: gray; */
+}
+#contain-time #hours {
+  text-align: right;
+}
+#contain-time #minutes {
+  text-align: center;
+}
+
+#contain-controllers {
+  width: 50%;
+  margin: 0 auto;
+  height: 10rem;
+  /*border: 2px solid purple;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 14rem;
+  height: 3rem;
+  margin: 0 .5rem;
+  background-color: #CCC;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 3rem;
+}
+#btnStart {
+  background-color: #0f9b0f;
+  cursor: pointer;
+}
+#btnStart:hover {
+  border: 3px solid #0f9b0f;
+  transition: all 400ms ease-in 0s;
+  background-color: transparent;
+}
+
+#btnEnd {
+  background-color: #ED213A;
+  cursor: pointer;
+}
+#btnEnd:hover{
+  border: 3px solid #ED213A;
+  background-color: transparent;
+  transition: all 400ms ease-in 0s;
+}
