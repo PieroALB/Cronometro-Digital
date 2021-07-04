@@ -7,22 +7,48 @@ let contSeconds = 0;
 let contMinutes = 0;
 let contHours = 0;
 let interval = null;
+
+
+function seconds(seconds){
+  if(seconds <10){
+    return "0"+seconds;
+  }else if(seconds >= 10){
+    return seconds;
+  }
+}
+
+function minutes(minutes){
+  if(minutes < 10){
+    return "0"+minutes+":";
+  }else if(minutes >= 10){
+    return minutes+":";
+  }
+}
+
+function hours(hours){
+  if(hours < 10){
+    return "0"+hours+":";
+  }else if(hours > 10){
+    return hours+":";
+  }
+}
+
 function cronometro() {
-  contSeconds += 1;
-  // console.log("seconds : ",contSeconds);
-  boxSeconds.innerHTML = contSeconds;
+  contSeconds += 1; 
+  boxSeconds.innerHTML = seconds(contSeconds);
+
   if (contSeconds == 60) {
     contMinutes += 1;
-    contSeconds = 0;
-    // console.log("Minutes : ",contMinutes);
-    boxMinutes.innerHTML = contMinutes + ":";
-    boxSeconds.innerHTML = contSeconds;
+    contSeconds = 0; 
+    boxMinutes.innerHTML = minutes(contMinutes) ;
+    boxSeconds.innerHTML =  seconds(contSeconds);
   }
+
   if (contMinutes == 60) {
     contHours += 1;
     contMinutes = 0;
-    boxHours.innerHTML = contHours + ":";
-    boxMinutes.innerHTML =  contMinutes + ":";
+    boxHours.innerHTML = hours(contHours);
+    boxMinutes.innerHTML = minutes(contMinutes);
   }
 }
 
