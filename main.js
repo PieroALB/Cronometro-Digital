@@ -1,3 +1,5 @@
+import {seconds,minutes,hours} from "./modules.js";
+
 let btnStart = document.querySelector("#btnStart");
 let btnEnd = document.querySelector("#btnEnd");
 let boxHours = document.querySelector("#hours");
@@ -7,31 +9,6 @@ let contSeconds = 0;
 let contMinutes = 0;
 let contHours = 0;
 let interval = null;
-
-
-function seconds(seconds){
-  if(seconds <10){
-    return "0"+seconds;
-  }else if(seconds >= 10){
-    return seconds;
-  }
-}
-
-function minutes(minutes){
-  if(minutes < 10){
-    return "0"+minutes+":";
-  }else if(minutes >= 10){
-    return minutes+":";
-  }
-}
-
-function hours(hours){
-  if(hours < 10){
-    return "0"+hours+":";
-  }else if(hours > 10){
-    return hours+":";
-  }
-}
 
 function cronometro() {
   contSeconds += 1; 
@@ -61,8 +38,5 @@ btnStart.addEventListener("click", (e) => {
 btnEnd.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("cronometro terminado");
-  // boxHours.innerHTML =  contHours;
-  // boxMinutes.innerHTML = contMinutes;
-  // boxSeconds.innerHTML =  contSeconds;
   clearInterval(interval);
 });
